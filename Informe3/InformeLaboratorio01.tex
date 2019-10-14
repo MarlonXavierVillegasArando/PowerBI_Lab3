@@ -49,7 +49,7 @@ TITULO:\\
 
 \vspace*{0.1in}
 \begin{Large}
-\textbf{INFORME DE LABORATORIO Nro 01} \\
+\textbf{INFORME DE LABORATORIO Nro 03} \\
 \end{Large}
 
 \vspace*{0.3in}
@@ -93,8 +93,7 @@ Marlon Xavier Villegas Arando	\hfill	(2015053890)
 \section{INFORMACIÓN GENERAL}
 	\begin{itemize}
 \subsection{Objetivos:}
-	\item Conocer controles basicos y fundamentos sobre Dashboards.
-	\item Aprender a elaborar Dashboards usando Power Bi.
+	\item Conocer controles más avanzados para generar dashboards interactivos muy entendibles y practicos.
 \subsection{Equipos, materiales, programas y recursos utilizados:}
 	\item Microsoft SQL Server 2017 o SQL Lite
 	\item Base de datos AdventureWorks2017
@@ -112,16 +111,8 @@ Marlon Xavier Villegas Arando	\hfill	(2015053890)
 \begin{itemize}
 	\item \textbf{Tarea 1:} Conectar a SQL Server desde Power BI Desktop 
 	\item Iniciar Power Bi Desktop; click en Obtener Datos , click en base de datos SQL Server y luego click en Conectar.
-	\item En el cuadro de dialogo base de datos SQL Server, en la casilla servidor tipear (local), en la casilla Base de
-datos (opcional) tipear AdventureWorks2017, y luego click en Conectar; seleccionar el check en Sales.vSalesPerson, y hacer
-click en Cargar. 
-	\item Hacer click en Fuentes Recientes, y seleccionar la vista Sales.vStoreWithDemographics, y luego hacer click en Cargar.
-	\item Hacer click en Obtener datos, luego en SQL Server. En opciones avanzadas tipear la siguiente consulta:
-\par SELECT TOP 10 P.ProductID, P.Name AS Product, SUM(CAST(LineTotal AS decimal(18,2))) AS LineTotal FROM
-Purchasing.PurchaseOrderDetail AS POD INNER JOIN Production.Product AS P ON POD.ProductID = P.ProductID
-GROUP BY P.ProductID, P.Name ORDER BY LineTotal DESC 
-
 	\item \textbf{Tarea 2:} Adicionar Gráficos al Reporter
+	\item \textbf{Tarea 2:} Agregar una pagina e insertar de la tabla Customers el campo City y de la tabla Sales el campo Line Total, luego ajustarlo. En la parte vacía de la pagina arrastrar de la tabla Sales by State el campo State Code, y dentro de la tabla generada en la pagina insertar SalesYTD
 
 	\item \textbf{Tarea 3:} Publicar el reporte en el portal de Power BI
 \end{itemize}
@@ -130,11 +121,15 @@ GROUP BY P.ProductID, P.Name ORDER BY LineTotal DESC
 	\begin{center}
 	\includegraphics[width=16cm]{./Imagenes/img}
 	\end{center}
-\par https://app.powerbi.com/groups/me/reports/6baf1255-f121-4c3f-be26-3a324c76c1c4/ReportSection
+	
+	\begin{center}
+	\includegraphics[width=16cm]{./Imagenes/img2}
+	\end{center}
+\par https://app.powerbi.com/groups/me/reports/dd0fcc1a-ea38-4233-9442-89d0ab3c59c8/ReportSection349be521a033be9e1acc
 \section{CONCLUSIONES}
 \begin{itemize}
-	\item En el desarrollo del laboratorio permite interactuar y aprender sobre como implementar un dashboard.
-	\item Power Bi tiene una serie de herramientas muy didacticas que nos permite tener un mejor análisis de datos de manera más rápida y sencilla.
+	\item En el desarrollo del laboratorio nos muestra como hacer un reporte de ventas global y enlazar los datos equivalentes de cada ciudad .
+	\item Con multiples graficos podemos volver un informe de datos simple a algo mas interactivo y fusionando multiples gráficos.
 \end{itemize}
 \section{REFERENCIAS}
 \begin{itemize}

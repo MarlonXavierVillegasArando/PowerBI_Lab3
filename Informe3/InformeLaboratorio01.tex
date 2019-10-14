@@ -1,0 +1,147 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx} % figuras
+\usepackage{hyperref}
+% \usepackage{subfigure} % subfiguras
+\usepackage{float} % para usar [H]
+\usepackage{amsmath}
+%\usepackage{txfonts}
+\usepackage{stackrel} 
+\usepackage{multirow}
+\usepackage{enumerate} % enumerados
+\renewcommand{\labelitemi}{$-$}
+\renewcommand{\labelitemii}{$\cdot$}
+% \author{}
+% \title{Caratula}
+\begin{document}
+
+% Fancy Header and Footer
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \cfoot{}
+% \rfoot{\thepage}
+%
+
+% \usepackage[hidelinks]{hyperref} % CREA HYPERVINCULOS EN INDICE
+
+% \author{}
+\title{Caratula}
+
+\begin{titlepage}
+\begin{center}
+\large{UNIVERSIDAD PRIVADA-DE-TACNA}\\
+\vspace*{-0.025in}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=8cm]{./Imagenes/logo}
+\end{center}
+\end{figure}
+\vspace*{0.15in}
+INGENIERIA DE SISTEMAS  \\
+
+\vspace*{0.5in}
+\begin{large}
+TITULO:\\
+\end{large}
+
+\vspace*{0.1in}
+\begin{Large}
+\textbf{INFORME DE LABORATORIO Nro 01} \\
+\end{Large}
+
+\vspace*{0.3in}
+\begin{Large}
+\textbf{CURSO:} \\
+\end{Large}
+
+\vspace*{0.1in}
+\begin{large}
+INTELIGENCIA DE NEGOCIOS\\
+\end{large}
+
+\vspace*{0.3in}
+\begin{Large}
+\textbf{DOCENTE(ING):} \\
+\end{Large}
+
+\vspace*{0.1in}
+\begin{large}
+ Patrick Cuadros Quiroga\\
+\end{large}
+
+\vspace*{0.2in}
+\vspace*{0.1in}
+\begin{large}
+Integrante: \\
+\begin{flushleft}
+Marlon Xavier Villegas Arando	\hfill	(2015053890) 
+\end{flushleft}
+\end{large}
+\end{center}
+
+\end{titlepage}
+
+
+
+\thispagestyle{empty} % INDICE SIN NUMERO
+\newpage
+\setcounter{page}{1} % REINICIAR CONTADOR DE PAGINAS DESPUES DEL INDICE
+
+\section{INFORMACIÓN GENERAL}
+	\begin{itemize}
+\subsection{Objetivos:}
+	\item Conocer controles basicos y fundamentos sobre Dashboards.
+	\item Aprender a elaborar Dashboards usando Power Bi.
+\subsection{Equipos, materiales, programas y recursos utilizados:}
+	\item Microsoft SQL Server 2017 o SQL Lite
+	\item Base de datos AdventureWorks2017
+	\item Power Bi Desktop
+\end{itemize}
+
+\section{MARCO TEORICO}
+\begin{itemize}
+\subsection{Power Bi:}
+	\item Solución de análisis empresarial que permite visualizar datos y compartir información de toda una organización, o insertarla en su aplicación o sitio web. 
+\subsection{Dashboard:}
+	\item Presenta el contenido de una serie de indicadores que muestran el comportamiento de los datos. 
+\end{itemize}
+\section{PROCEDIMIENTO}
+\begin{itemize}
+	\item \textbf{Tarea 1:} Conectar a SQL Server desde Power BI Desktop 
+	\item Iniciar Power Bi Desktop; click en Obtener Datos , click en base de datos SQL Server y luego click en Conectar.
+	\item En el cuadro de dialogo base de datos SQL Server, en la casilla servidor tipear (local), en la casilla Base de
+datos (opcional) tipear AdventureWorks2017, y luego click en Conectar; seleccionar el check en Sales.vSalesPerson, y hacer
+click en Cargar. 
+	\item Hacer click en Fuentes Recientes, y seleccionar la vista Sales.vStoreWithDemographics, y luego hacer click en Cargar.
+	\item Hacer click en Obtener datos, luego en SQL Server. En opciones avanzadas tipear la siguiente consulta:
+\par SELECT TOP 10 P.ProductID, P.Name AS Product, SUM(CAST(LineTotal AS decimal(18,2))) AS LineTotal FROM
+Purchasing.PurchaseOrderDetail AS POD INNER JOIN Production.Product AS P ON POD.ProductID = P.ProductID
+GROUP BY P.ProductID, P.Name ORDER BY LineTotal DESC 
+
+	\item \textbf{Tarea 2:} Adicionar Gráficos al Reporter
+
+	\item \textbf{Tarea 3:} Publicar el reporte en el portal de Power BI
+\end{itemize}
+\section{ANALISIS E INTERPRETACIÓN DE DATOS}
+
+	\begin{center}
+	\includegraphics[width=16cm]{./Imagenes/img}
+	\end{center}
+\par https://app.powerbi.com/groups/me/reports/6baf1255-f121-4c3f-be26-3a324c76c1c4/ReportSection
+\section{CONCLUSIONES}
+\begin{itemize}
+	\item En el desarrollo del laboratorio permite interactuar y aprender sobre como implementar un dashboard.
+	\item Power Bi tiene una serie de herramientas muy didacticas que nos permite tener un mejor análisis de datos de manera más rápida y sencilla.
+\end{itemize}
+\section{REFERENCIAS}
+\begin{itemize}
+	\item Microsoft. ¿Qué es Power BI?. Recuperado de \url{https://powerbi.microsoft.com/es-es/what-is-power-bi/}
+	\item Jortilles. Crear un dashboard con Pentaho Bi-Server. Recuperado de \url{http://www.jortilles.com/wp-content/uploads/2016/04/DashboardCDE_Pentaho.pdf}
+
+\end{itemize}
+
+
+\end{document}
